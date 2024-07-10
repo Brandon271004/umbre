@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "umbrellamx_backend": {
+      "build": "npx azle umbrellamx_backend",
+      "candid": "src/umbrellamx_backend/umbrellamx_backend.did",
+      "gzip": true,
+      "main": "src/umbrellamx_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/umbrellamx_backend/umbrellamx_backend.wasm"
+    },
+    "umbrellamx_frontend": {
+      "dependencies": [
+        "umbrellamx_backend"
+      ],
+      "source": [
+        "src/umbrellamx_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "umbrellamx_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
